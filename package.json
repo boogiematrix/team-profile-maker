@@ -1,0 +1,29 @@
+{
+  "name": "team-profile-maker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest ./_tests_" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boogiematrix/team-profile-maker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boogiematrix/team-profile-maker/issues"
+  },
+  "homepage": "https://github.com/boogiematrix/team-profile-maker#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
