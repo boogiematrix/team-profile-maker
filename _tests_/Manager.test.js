@@ -10,6 +10,7 @@ describe('Manager class', () => {
 
 describe('.getRole', () => {
     it('it returns "Manager"', () => {
-        expect(new Manager.getRole()).toEqual('Manager')
+        const worker = new Manager;
+        expect(worker.getRole()).toEqual('Manager')
     })
 })

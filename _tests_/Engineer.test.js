@@ -10,7 +10,8 @@ describe('Engineer class', () => {
 
 describe('.getGithub', () => {
     it('returns the github of the new employee', () => {
-        const worker = new Engineer(github = 'bill.waters')
+        const worker = new Engineer
+        worker.github = 'bill.waters'
 
         expect(worker.getGithub()).toEqual('bill.waters')
     })
@@ -18,6 +19,7 @@ describe('.getGithub', () => {
 
 describe('.getRole', () => {
     it('it returns "Engineer"', () => {
-        expect(new Engineer.getRole()).toEqual('Engineer')
+        const worker = new Engineer
+        expect(worker.getRole()).toEqual('Engineer')
     })
 })

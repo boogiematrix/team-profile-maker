@@ -2,7 +2,8 @@ const Employee = require('../lib/employee');
 
 describe('.getName', () => {
     it('returns the name of the new employee', () => {
-        const worker = new Employee(name = 'bill')
+        let worker = new Employee;
+        worker.name = 'bill';
 
         expect(worker.getName()).toEqual('bill')
     })
@@ -10,23 +11,24 @@ describe('.getName', () => {
 
 describe('.getId', () => {
     it('returns the ID of the new employee', () => {
-        const worker = new Employee(id = 10)
-
-        expect(worker.getId()).toEqual(10)
+        let worker2 = new Employee;
+        worker2.id = '10';
+        expect(worker2.getId()).toEqual('10')
     })
 })
 
 describe('.getEmail', () => {
     it('returns the email of the new employee', () => {
-        const worker = new Employee(email = 'bob@gmail.com')
-
-        expect(worker.getEmail()).toEqual('bob@gmail.com')
+        let worker3 = new Employee;
+        worker3.email = 'bob@gmail.com';
+        expect(worker3.getEmail()).toEqual('bob@gmail.com')
     })
 })
 
 describe('.getRole', () => {
     it('it returns "Employee"', () => {
+        let worker = new Employee;
 
-        expect(new Employee.getRole()).toEqual('Employee')
+        expect(worker.getRole()).toEqual('Employee')
     })
 })

@@ -10,7 +10,8 @@ describe('Intern class', () => {
 
 describe('.getSchool', () => {
     it('returns the school of the new employee', () => {
-        const worker = new Intern(school = 'carleton')
+        const worker = new Intern;
+        worker.school = 'carleton';
 
         expect(worker.getSchool()).toEqual('carleton')
     })
@@ -18,6 +19,7 @@ describe('.getSchool', () => {
 
 describe('.getRole', () => {
     it('it returns "Intern"', () => {
-        expect(new Intern.getRole()).toEqual('Intern')
+        const worker = new Intern
+        expect(worker.getRole()).toEqual('Intern')
     })
 })
