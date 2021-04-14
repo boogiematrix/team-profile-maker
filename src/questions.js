@@ -23,8 +23,8 @@ const managerQuestions = [
     {
         type: 'list',
         message: 'Would you like to add another team member?',
-        choices: ['Engineer', 'Intern', 'Finished building team'],
-        name: 'teamMember'
+        name: 'teamMember',
+        choices: ['Engineer', 'Intern', 'Finished building team']
     }
 ]
 
@@ -52,8 +52,8 @@ const engineerQuestions = [
     {
         type: 'list',
         message: 'Would you like to add another team member?',
-        choices: ['Engineer', 'Intern', 'Finished building team'],
-        name: 'teamMember'
+        name: 'teamMember',
+        choices: ['Engineer', 'Intern', 'Finished building team']
     }
 ]
 
@@ -81,11 +81,11 @@ const internQuestions = [
     {
         type: 'list',
         message: 'Would you like to add another team member?',
-        choices: ['Engineer', 'Intern', 'Finished building team'],
-        name: 'teamMember'
+        name: 'teamMember',
+        choices: ['Engineer', 'Intern', 'Finished building team']
     }
 ]
 
 
 
-module.exports = {managerQuestions, engineerQuestions, internQuestions,}
+module.exports = {managerQuestions, engineerQuestions, internQuestions}
