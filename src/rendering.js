@@ -5,7 +5,7 @@ const Intern = require('../lib/intern');
 const Manager = require('../lib/manager');
 const questions = require('./questions');
 const templates = require('./templates');
-
+var fileName
 function addMoreTeamMembers(role) {
     inquirer
         .prompt(role)
@@ -16,7 +16,7 @@ function addMoreTeamMembers(role) {
                 var worker = new Intern(data.name, data.id, data.email, data.school);
             }
 
-            fs.appendFile(`./dist/team.html`, templates(worker), (err) => {
+            fs.appendFile(fileName, templates(worker), (err) => {
                 console.error(err)
             });
 console.log(data.teamMember)
@@ -25,7 +25,7 @@ console.log(data.teamMember)
             } else if (data.teamMember === 'Intern') {
                 addMoreTeamMembers(questions.internQuestions)
             } else {
-                fs.appendFile(`./dist/team.html`, templates(), (err) => {
+                fs.appendFile(fileName, templates(), (err) => {
                     console.error(err)
                 })
             }
@@ -38,7 +38,7 @@ function init () {
     .prompt(questions.managerQuestions)
     .then((data) => {
         let manager = new Manager(data.name, data.id, data.email, data.officeNumber);
-        var fileName = `./dist/team.html`
+        fileName = `./dist/${data.name}.html`
         //insert html template rendering, and write file, then start new prompt or finish
         fs.writeFile(fileName, templates(manager), (err) => {
             console.error(err)
