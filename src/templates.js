@@ -38,7 +38,7 @@ function renderHtml(employee) {
                 <h3 class='card-subtitle'>Manager</h3>
                 <ul class='list-group list-group-flush'>
                     <li class='list-group-item'>ID: ${employee.id}</li>
-                    <li class='list-group-item'>email: <a>${employee.email}</a></li>
+                    <li class='list-group-item'>email: <a href='mailto:${employee.email}'>${employee.email}</a></li>
                     <li class='list-group-item'>Office Number: ${employee.officeNumber}</li>
                 </ul>
             </article>`
@@ -48,8 +48,8 @@ function renderHtml(employee) {
                 <h3 class='card-subtitle'>Engineer</h3>
                 <ul class='list-group list-group-flush'>
                     <li class='list-group-item'>ID: ${employee.id}</li>
-                    <li class='list-group-item'>email: <a>${employee.email}</a></li>
-                    <li class='list-group-item'>Github:<a>${employee.github}</a></li>
+                    <li class='list-group-item'>email: <a href='mailto:${employee.email}'>${employee.email}</a></li>
+                    <li class='list-group-item'>Github:<a href='https://github.com/${employee.github}'>${employee.github}</a></li>
                 </ul>
             </article>`
     } else if (employee.getRole() === 'Intern') {
@@ -58,7 +58,7 @@ function renderHtml(employee) {
                 <h3 class='card-subtitle'>Intern</h3>
                 <ul class='list-group list-group-flush'>
                     <li class='list-group-item'>ID: ${employee.id}</li>
-                    <li class='list-group-item'>email: <a>${employee.email}</a></li>
+                    <li class='list-group-item'>email: <a href='mailto:${employee.email}'>${employee.email}</a></li>
                     <li class='list-group-item'>School: ${employee.school}</li>
                 </ul>
             </article>`
