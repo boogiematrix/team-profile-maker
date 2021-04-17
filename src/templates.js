@@ -27,13 +27,13 @@ function renderHtml(employee) {
     <title>Document</title>
 </head>
 <body>
-    <header class='jumbotron'>
-        <h1 class='text-center'>My Team</h1>
+    <header class='jumbotron bg-info'>
+        <h1 class='text-center text-white'>My Team</h1>
     </header>
     <main class='container-fluid'>
         <div class='row justify-content-center'>
 
-            <article class='card card-body col-12 col-md-3 m-2' style='width: 20rem'>
+            <article class='card card-body col-12 col-md-3 m-2 shadow' style='width: 20rem'>
                 <h2 class='card-title'>${employee.name}</h2>
                 <h3 class='card-subtitle'>Manager</h3>
                 <ul class='list-group list-group-flush'>
@@ -43,7 +43,7 @@ function renderHtml(employee) {
                 </ul>
             </article>`
     } else if (employee.getRole() === 'Engineer') {
-       return `            <article class='card card-body col-12 col-md-3 m-2' style='width: 20rem'>
+       return `            <article class='card card-body col-12 col-md-3 m-2 shadow' style='width: 20rem'>
                 <h2 class='card-title'>${employee.name}</h2>
                 <h3 class='card-subtitle'>Engineer</h3>
                 <ul class='list-group list-group-flush'>
@@ -53,7 +53,7 @@ function renderHtml(employee) {
                 </ul>
             </article>`
     } else if (employee.getRole() === 'Intern') {
-       return `            <article class='card card-body col-12 col-md-3 m-2' style='width: 20rem'>
+       return `            <article class='card card-body col-12 col-md-3 m-2 shadow' style='width: 20rem'>
                 <h2 class='card-title'>${employee.name}</h2>
                 <h3 class='card-subtitle'>Intern</h3>
                 <ul class='list-group list-group-flush'>
