@@ -5,6 +5,8 @@
 
   ![Demo](https://github.com/boogiematrix/team-profile-maker/blob/main/Assets/team-builder-screenshot.png)
 
+  ![Sample](https://github.com/boogiematrix/team-profile-maker/blob/main/Assets/sample-screenshot.png)
+
   [Video Demo](https://drive.google.com/file/d/1ZZ2ihFJzJ0TpcrIzaBQgP72-cod2i-Cn/view)
   
   
