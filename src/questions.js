@@ -21,10 +21,44 @@ const managerQuestions = [
         name: 'officeNumber'
     },
     {
-        type: 'list',
-        message: 'Would you like to add another team member?',
-        name: 'teamMember',
-        choices: ['Engineer', 'Intern', 'Finished building team']
+        type: 'recursive',
+        message: 'Add a new employee?',
+        name: 'employees',
+        prompts: [
+            {
+                type: 'list',
+                message: 'What type of team member would you like to add?',
+                name: 'teamMember',
+                choices: ['Engineer', 'Intern']
+            },
+            {
+                type: 'input',
+                message: 'What is the engineers name?',
+                name: 'name'
+            },
+            {
+                type: 'input',
+                message: 'What is their ID?',
+                name: 'id'
+            },
+            {
+                type: 'input',
+                message: 'What is their email?',
+                name: 'email'
+            },
+            {
+                type: 'input',
+                message: 'What is their github name?',
+                name: 'github',
+                when: (answers) => {answers.teamMember === 'Engineer'}
+            },
+            {
+                type: 'input',
+                message: 'What school do they attend?',
+                name: 'school',
+                when: (answers) => {answers.teamMember === 'Intern'}
+            }
+        ]
     }
 ]
 

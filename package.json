@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest ./_tests_" 
+    "test": "jest ./_tests_"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/boogiematrix/team-profile-maker#readme",
   "dependencies": {
-    "inquirer": "^8.0.0"
+    "inquirer": "^8.0.0",
+    "inquirer-recursive": "0.0.7"
   },
   "devDependencies": {
     "jest": "^26.6.3"

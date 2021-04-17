@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+inquirer.registerPrompt('recursive', require('inquirer-recursive'));
 const fs = require('fs');
 const Engineer = require('../lib/engineer');
 const Intern = require('../lib/intern');
@@ -19,17 +20,17 @@ function addMoreTeamMembers(role) {
             fs.appendFile(fileName, templates(worker), (err) => {
                 console.error(err)
             });
-console.log(data.teamMember)
-            if (data.teamMember === 'Engineer') {
-                addMoreTeamMembers(questions.engineerQuestions)
-            } else if (data.teamMember === 'Intern') {
-                addMoreTeamMembers(questions.internQuestions)
-            } else {
-                fs.appendFile(fileName, templates(), (err) => {
-                    console.error(err)
-                })
-            }
-
+            console.log(data.teamMember)
+                if (data.teamMember === 'Engineer') {
+                    addMoreTeamMembers(questions.engineerQuestions)
+                } else if (data.teamMember === 'Intern') {
+                    addMoreTeamMembers(questions.internQuestions)
+                } else {
+                    fs.appendFile(fileName, templates(), (err) => {
+                        console.error(err)
+                    })
+                }
+            
         })
 }
 function init () {
@@ -43,7 +44,24 @@ function init () {
         fs.writeFile(fileName, templates(manager), (err) => {
             console.error(err)
         })
-        
+
+        data.employees.forEach((employee) => {
+            if (employee.teamMember === 'Engineer') {
+                let worker = new Engineer(data.name, data.id, data.email, data.github);
+                fs.appendFile(fileName, templates(worker), (err) => {
+                    console.error(err)
+                });
+            } else if (employee.teamMember === 'Intern') {
+                let worker = new Intern(data.name, data.id, data.email, data.school);
+                fs.appendFile(fileName, templates(worker), (err) => {
+                    console.error(err)
+                });
+            }
+        })
+        fs.appendFile(fileName, templates(), (err) => {
+            console.error(err)
+        });
+        /*
         if (data.teamMember === 'Engineer') {
             addMoreTeamMembers(questions.engineerQuestions)
         } else if (data.teamMember === 'Intern') {
@@ -52,7 +70,7 @@ function init () {
             fs.appendFile(fileName, templates(), (err) => {
                 console.error(err)
             })
-        }
+        }*/
     })
 }
 module.exports = init
