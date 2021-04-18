@@ -1,6 +1,7 @@
 
 
 function renderHtml(employee) {
+    //template for the end of the html file
     if (!employee) {
         return `        </div>
         </main>
@@ -15,7 +16,7 @@ function renderHtml(employee) {
         crossorigin="anonymous"></script>
 </body>
 </html>`
-    
+    //manager template
     } else if (employee.getRole() === 'Manager') {
        return `<!DOCTYPE html>
 <html lang="en">
@@ -42,6 +43,7 @@ function renderHtml(employee) {
                     <li class='list-group-item'>Office Number: ${employee.officeNumber}</li>
                 </ul>
             </article>`
+        //engineer template
     } else if (employee.getRole() === 'Engineer') {
        return `            <article class='card card-body col-12 col-md-3 m-2 shadow' style='width: 20rem'>
                 <h2 class='card-title'>${employee.name}</h2>
@@ -52,6 +54,7 @@ function renderHtml(employee) {
                     <li class='list-group-item'>Github:<a href='https://github.com/${employee.github}'>${employee.github}</a></li>
                 </ul>
             </article>`
+        //intern template
     } else if (employee.getRole() === 'Intern') {
        return `            <article class='card card-body col-12 col-md-3 m-2 shadow' style='width: 20rem'>
                 <h2 class='card-title'>${employee.name}</h2>
